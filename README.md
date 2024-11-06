@@ -15,7 +15,7 @@
 <dependency>
    <groupId>io.github.huazhaoyishiba</groupId>
    <artifactId>mybatis-sql-interceptor</artifactId>
-   <version>1.1.4</version>
+   <version>1.1.5</version>
 </dependency>
 ````
 
