@@ -27,7 +27,9 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 
 
-@Intercepts({@Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}), @Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class}), @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
+@Intercepts({@Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class}),
+        @Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class, RowBounds.class, ResultHandler.class, CacheKey.class, BoundSql.class}),
+        @Signature(type = Executor.class, method = "update", args = {MappedStatement.class, Object.class})})
 
 @Slf4j
 public class SqlInterceptor implements Interceptor {
@@ -45,7 +47,7 @@ public class SqlInterceptor implements Interceptor {
         try {
             printSql = generateSql(invocation);
         } catch (Exception exception) {
-            log.warn("无法解析SQL，可能是由于动态参数问题。此日志信息并不代表执行SQL存在问题。具体异常信息：{}{}{}", RED, exception.getMessage(), ANSI_RESET);
+            log.warn("无法解析SQL，可能是由于动态参数问题。此日志信息并不代表执行的SQL存在问题。具体异常信息：{}{}{}", RED, exception.getMessage(), ANSI_RESET);
         } finally {
             long costTime = endTime - startTime;
             log.info("\n 执行SQL耗时：{}ms \n 执行SQL：{}{}{}", costTime, ANSI_MAGENTA, printSql, ANSI_RESET);
