@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.huazhaoyishiba</groupId>
     <artifactId>mybatis-sql-interceptor</artifactId>
-    <version>1.1.4</version>
+    <version>1.1.5</version>
     <packaging>jar</packaging>
     <name>MyBatis SQL Interceptor</name>
     <description>A SQL interceptor for MyBatis logging</description>
